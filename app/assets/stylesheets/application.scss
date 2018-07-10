@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'colors';
+@import 'fonts';
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+body{
+	font-size: 14px;
+	font-family: $PTRegular;
+	background-color: bisque;
+}
+
+.ctn-projects, .ctn-form-section {
+	padding: 56px;
+}
+
+.ctn-form-section {
+	padding-top: 128px;
+	background-image: url("/assets/images/Remanso-40.png");
+	background-size: cover;
+	background-position: center 10%;
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.box-form img {
+		width: 100%;
+		max-width: 420px;
+	}
+}
+
+.ctn-projects {
+	font-family: $BRegular;
+	font-size: 36px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	.bold {
+		font-family: $BMedium;
+	}
+}
+
+#map {
+	display: flex;
+	iframe {
+		width: 100%;
+	}
+}
+
+.btn-brown {
+	background-color: $brown;
+	color: white;
+	&:hover {
+		background-color: darken($brown, 3%);
+	}
+}
+
+@media (min-width: 992px) {
+	.ctn-form-section {
+		.box-form {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			img {
+				width: auto;
+			}
+		}
+	}
+}
+
+@media (min-width: 1005px) {
+	.ctn-form-section {
+		.box-form {
+			img {
+				max-width: none;
+			}
+		}
+	}
+}
+
+@media (min-width: 426px) {
+	.ctn-form-section {
+		.box-form {
+			img {
+
+			}
+		}
+	}
+}

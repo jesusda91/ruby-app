@@ -1,0 +1,16 @@
+<div class="contact-form">
+    <h3 class="title">
+        ¡Déjanos tus datos y te <span class="bold">mantendremos informado!</span>
+    </h3>
+    <%= form_for :contact do |f| %>
+        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :email, class: 'form-control' %>
+        <%= f.text_field :phone, class: 'form-control' %>
+        <%= f.text_field :city, class: 'form-control' %>
+        <%= f.text_field :comments, class: 'form-control' %>
+         <p class="terms">
+            Al hacer clic en enviar, estás aceptando los <span class="bold">términos y condiciones</span>
+        </p>
+         <%= f.submit "Enviar", class: 'btn btn-brown' %>
+    <% end %>
+</div>

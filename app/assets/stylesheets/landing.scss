@@ -1,3 +1,111 @@
 // Place all the styles related to the landing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'colors';
+@import 'fonts';
+
+.header {
+	background-color: $brown;
+	color: white;
+	position: relative;
+	// font-family: $PTBold;
+	font-size: 16px;
+	svg {
+		height: 24px;
+		* {
+			fill: white;
+		}
+	}
+	a:not(.navbar-brand) {
+		color: white;
+		text-decoration: none;
+		display: block;
+		padding: 1em;
+		&:hover {
+			color: white;
+			text-decoration: none;
+			background-color: rgba($color: #DDD, $alpha: 0.1);
+			border-radius: .375rem;
+		}
+	}
+	ul {
+		margin: 0;
+		padding-top: 4em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		li {
+			list-style: none;
+			cursor: pointer;
+			&.separator {
+				cursor: default;
+				padding: 0;
+				margin: .1em;
+				display: none;
+			}
+			&.spacer {
+				width: 304px;
+				display: none;
+			}
+			&:hover:not(.separator) {
+				background-color: rgba($color: #111, $alpha: 0.1);
+			}
+		}
+	}
+	.logo {
+		position: absolute;
+		top: 0;
+		height: 85px;
+		left: calc(50% - 100px);
+	}
+}
+
+@media screen and (min-width: 370px) {
+	.header.navbar-expand-lg {
+		.logo {
+			height: 100px;
+			left: calc(50% - 117px);
+		}
+	}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1300px) {
+	.header.navbar-expand-lg {
+		ul {
+			li {
+				&.spacer {
+					display: flex;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.header.navbar-expand-lg {
+		ul {
+			padding-top: 0;
+			li {
+				&.separator {
+					display: block;
+				}
+			}
+		}
+		.logo {
+			height: 130px;
+			left: 3em;
+		}
+	}
+}
+
+// @media (max-width: 992px) {
+// 	.header {
+// 		.navbar-brand {
+// 			img {
+// 				height: 100px;
+// 				left: calc(50% - 117px);
+// 			}
+// 		}
+// 	}
+// }
